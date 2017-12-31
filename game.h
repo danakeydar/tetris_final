@@ -13,13 +13,14 @@
 
 using namespace std;
 
-enum KEYS { NEW_GAME = '1', PAUSE = '2', CONTINUE = '3', SPEED_UP = '4', SPEED_DOWN = '5', EXIT = '6' };
+enum KEYS { NEW_GAME = '1', PAUSE = '2', CONTINUE = '3', SPEED_UP = '4', SPEED_DOWN = '5', EXIT = '6' }; 
 enum speed { HARD_DROP_SPEED = 80, SOFT_DROP_SPEED = 150 };
 
 class Game {
 	 void menu()
 	{
-		gotoxy(1, 1);
+		 //placed the menu buttons in a specific location of the screen
+		gotoxy(1, 1); 
 		cout << "Score : " << score;
 		gotoxy(30, 5);     cout << "1 - New game " << endl;
 		gotoxy(30, 6);    cout << "2 - Pause  " << endl;

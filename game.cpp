@@ -31,6 +31,7 @@ void Game::run() {
 	unsigned int speed = 500;
 	bool dropDown = false, softDrop = false;
 
+	//when the user type a button insert it to keyPressed
 	keyPressed = _getch();
 	
 	if (keyPressed == KEYS::NEW_GAME)
@@ -38,7 +39,7 @@ void Game::run() {
 
  		while (keyPressed != EXIT)
 		{
-			Shape p = { { 4,4 } };//creating a new shape
+			Shape p = { { 4,4 } };//creating a new shape in the top-middle of the board 
 
 			if (gameBoard.gameOver(p))
 			{
