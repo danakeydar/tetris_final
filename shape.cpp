@@ -5,7 +5,7 @@ void Shape::rotateLine()
 {
 	if (SType == LINE)
 	{
-		if (body[0].y == body[1].y)
+		if (body[0].y == body[1].y) //horizontal line
 		{
 			body[1].x = body[2].x = body[3].x = body[0].x;
 			body[1].y = body[0].y - 1;
@@ -14,7 +14,7 @@ void Shape::rotateLine()
 
 			draw();
 		}
-		else
+		else //vertical line
 		{
 			body[3].y = body[2].y = body[1].y = body[0].y;
 			body[1].x = body[0].x + 1;
@@ -61,11 +61,11 @@ Shape::Shape(const Point& head) {
 void Shape::move(char keyPressed)
 {
 	if (SType != JOKER)
-		draw(' ');
+		draw(' ');// delete while moving down for all the shapes except the JOKER 
 	else
 	{
 		if (Board::board[body[0].y][body[0].x] == false)
-			draw(' ');
+			draw(' '); //delete the JOKER just in case it's on empty place on the board
 	}
 
 	if (keyPressed == Direction::SOFT_DROP || keyPressed == Direction::DOWN || keyPressed == Direction::RIGHT || keyPressed == Direction::LEFT)

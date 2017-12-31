@@ -35,7 +35,7 @@ void Board::checkForFullRows(const Shape& p)
 				}
 			}
 		}
-		else
+		else // the shape is vertical line 
 		{
 			int i = 0, counter = 0;
 			while (counter<4)//chack all rows of p

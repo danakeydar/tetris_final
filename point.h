@@ -22,6 +22,7 @@ public:
 	Point down() const {
 		return Point(x, y + 1);
 	}
+	//used for delete and write the shapes 
 	void draw(char c = '*') const {
 		gotoxy(x, y);
 

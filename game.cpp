@@ -95,10 +95,10 @@ void Game::run() {
 						}
 					}
 				}
-				else
+				else  
 				{
 					keyPressed = 0;
-
+				//if soft drop or hard drop was typed
 					if (dropDown == true)
 					{
 						score++;//correction for the first move
@@ -112,12 +112,14 @@ void Game::run() {
 
 					softDrop = false;
 
+					//if non of the buttons was typed
 					if (gameBoard.isPossibleMove(p, keyPressed))
 						p.move(keyPressed);
 				}
 
 			}
 
+			//when the shape can't make another move, if it bomb delete the area around, update the board and check for full rows
 			if (keyPressed != EXIT)
 			{
 				if (p.SType == Shape::BOMB)

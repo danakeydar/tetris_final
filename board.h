@@ -20,7 +20,7 @@ public:
 		else
 			return false;
 	}
-	Board() 
+	Board() //board c'tor 
 	{
 		for (int i = 4;i <= endOfBoard;i++)
 		{
