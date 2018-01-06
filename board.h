@@ -20,35 +20,12 @@ public:
 		else
 			return false;
 	}
-	Board() //board c'tor 
-	{
-		for (int i = 4;i <= endOfBoard;i++)
-		{
-			for (int j = 0;j < WIDTH;j++)
-			{
-				board[i][j] = false;
-			}
-		}
-	}
+	Board(); //board c'tor 
 	static bool board[20][10];
-	void updateBoard(const Shape& p)
-	{
-		for (int i = 0;i < 4;i++)
-			board[p.body[i].y][p.body[i].x] = true;
-	}
+	void updateBoard(const Shape& p);
 	bool isPossibleMove(const Shape& p, char keyPressed);
 	void updateBoardAfterDelete(int y);
-	void deleteRow(int y)
-	{
-		for (int i = 0;i < 10;i++)
-		{
-			gotoxy(i, y);
-			cout << ' ';
-			board[y][i] = false;
-		}
-
-		updateBoardAfterDelete(y);
-	}
+	void deleteRow(int y);
 	void checkForFullRows(const Shape& p);
 	void deleteBombArea(const Shape& p);
 

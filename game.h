@@ -30,20 +30,7 @@ class Game {
 		gotoxy(30, 10);   cout << "6 - Exit " << endl;
 
 	}
-	 void drawBoardFrame()
-	{
-		gotoxy(0, 19);
-		for (int i = 0;i < 10;i++)
-			cout << (char)205;
-		cout << (char)188;
-
-
-		for (int i = 0;i <15;i++)
-		{
-			gotoxy(10, 4 + i);
-			cout << (char)186;
-		}
-	}
+	 void drawBoardFrame();
 	 void printGameOver()
 	{
 		gotoxy(1, 4);

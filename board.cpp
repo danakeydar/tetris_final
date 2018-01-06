@@ -1,5 +1,32 @@
 #include "board.h"
 
+void Board::deleteRow(int y)
+{
+	for (int i = 0;i < 10;i++)
+	{
+		gotoxy(i, y);
+		cout << ' ';
+		board[y][i] = false;
+	}
+
+	updateBoardAfterDelete(y);
+}
+
+void Board::updateBoard(const Shape& p)
+{
+	for (int i = 0;i < 4;i++)
+		board[p.body[i].y][p.body[i].x] = true;
+}
+Board::Board() //board c'tor 
+{
+	for (int i = 4;i <= endOfBoard;i++)
+	{
+		for (int j = 0;j < WIDTH;j++)
+		{
+			board[i][j] = false;
+		}
+	}
+}
 void Board::checkForFullRows(const Shape& p)
 {
 	int numOfDeletedRows = 0;//to calculate the score

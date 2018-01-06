@@ -4,6 +4,20 @@
 
 unsigned int Game::score = 0;
 
+void Game::drawBoardFrame()
+{
+	gotoxy(0, 19);
+	for (int i = 0;i < 10;i++)
+		cout << (char)205;
+	cout << (char)188;
+
+
+	for (int i = 0;i <15;i++)
+	{
+		gotoxy(10, 4 + i);
+		cout << (char)186;
+	}
+}
 void Game::updateScore(char ch)
 {
 	//the function updating the player score according to the game rules and printing it
